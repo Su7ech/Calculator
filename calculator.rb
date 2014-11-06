@@ -2,6 +2,29 @@ def say(msg)
   puts "----#{msg}----"
 end
 
+def validate_input(number)
+  
+end
+
+def do_math(num1, num2, operation)
+  case operation
+    when '+'
+      num1.to_i + num2.to_i
+    when '-'
+      num1.to_i - num2.to_i
+    when '*'
+      num1.to_i * num2.to_i
+    when '/'
+      if num2.to_i == 0
+        say "You cannot devide by 0, try again!"
+      else
+        num1.to_i / num2.to_i
+      end
+    else
+      say "Invalid Selection, try again!!!"
+    end
+end
+
 say "Welcome to my calculator!"
 say "What's the first number?"
 
@@ -12,21 +35,13 @@ say "What's the second number?"
 num2 = gets.chomp
 
 say "What would you like to do?"
-say "Enter '1' for Addition, '2' for Subtraction, '3' for Multiplication, or '4' for Division"
+say "Enter '+' for Addition, '-' for Subtraction, '*' for Multiplication, or '/' for Division"
 
 operation = gets.chomp
 
-case operation
-  when '1'
-    p "#{num1} + #{num2} = #{num1.to_i + num2.to_i}"
-  when '2'
-    p "#{num1} - #{num2} = #{num1.to_i - num2.to_i}"
-  when '3'
-    p "#{num1} * #{num2} = #{num1.to_i * num2.to_i}"
-  when '4'
-    p "#{num1} / #{num2} = #{num1.to_f / num2.to_f}"
-  else
-    say "Invalid Selection!!!"
-  end
+result = do_math(num1, num2, operation)
+
+say "#{num1} #{operation} #{num2} = #{result}"
 
 say "Thanks for playing!!!"
+

@@ -2,10 +2,6 @@ def say(msg)
   puts "----#{msg}----"
 end
 
-def validate_input(number)
-  
-end
-
 def do_math(num1, num2, operation)
   case operation
     when '+'

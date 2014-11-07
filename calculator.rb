@@ -50,8 +50,10 @@ while run_calculator == 'yes'
   elsif run_calculator.downcase == 'yes'
     run_calculator = 'yes'
   else
-    say "Please enter yes or no!"
-    run_calculator = gets.chomp
+    until run_calculator.downcase == 'yes' || run_calculator.downcase == 'no'
+      say "Please enter yes or no!"
+      run_calculator = gets.chomp
+    end
   end
 end 
 

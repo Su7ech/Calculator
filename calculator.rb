@@ -2,6 +2,14 @@ def say(msg)
   puts "---- #{msg} ----"
 end
 
+def border()
+  puts "-----------------------------------"
+end
+
+def spacer()
+  puts "\n"
+end
+
 def do_math(num1, num2, operation)
   case operation
     when '+'
@@ -15,20 +23,29 @@ def do_math(num1, num2, operation)
     end
 end
 
+border
 say "Welcome to my calculator!"
+border
+
+spacer
 
 run_calculator = 'yes'
 
 while run_calculator == 'yes'
   say "What's the first number?"
 
+  spacer
+
   num1 = gets.chomp
 
   say "What's the second number?"
 
+  spacer
+
   num2 = gets.chomp
 
   say "What would you like to do?"
+
   say "Enter '+' for Addition, '-' for Subtraction, '*' for Multiplication, or '/' for Division"
 
   operation = gets.chomp

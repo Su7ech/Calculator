@@ -2,6 +2,13 @@ def say(msg)
   puts "=> #{msg}"
 end
 
+# def validate_first_input(num1)
+#   until num1 =~ /^[-+]?((\d+(\.\d*)?)|(\.\d+))$/
+#     puts "Please enter a valid number!!!"
+#     num1 = gets.chomp
+#   end
+# end
+
 def do_math(num1, num2, operation)
   case operation
     when '+'
@@ -23,10 +30,18 @@ while run_calculator == 'yes'
   say "What's the first number?"
 
   num1 = gets.chomp
+  until num1 =~ /^[-+]?((\d+(\.\d*)?)|(\.\d+))$/
+    say "Invalid Number, try again!"
+    num1 = gets.chomp
+  end
 
   say "What's the second number?"
 
   num2 = gets.chomp
+  until num2 =~ /^[-+]?((\d+(\.\d*)?)|(\.\d+))$/
+    say "Invalid Number, try again!"
+    num2 = gets.chomp
+  end
 
   say "What would you like to do?"
 
